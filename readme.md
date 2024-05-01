@@ -15,6 +15,7 @@ Frontend:
 - Axios: For making HTTP requests to the server and handling communication between the frontend and backend.
 - React Hook Form: Facilitates form creation in React, providing efficient state management and form validation.
 - JS-Cookie: Used for handling cookies in the application.
+
 Backend:
 
 - Express: A minimalist Node.js framework that makes it easy to create RESTful APIs and handle routes.
