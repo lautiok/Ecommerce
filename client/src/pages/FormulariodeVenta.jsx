@@ -3,12 +3,14 @@ import { useForm } from "react-hook-form";
 import { CartContext } from "../context/CartContext";
 import { useOrder } from "../context/OrderContext";
 import { useNavigate } from "react-router-dom";
+import { useProduct } from "../context/ProductContext";
 
 export const FormularioDeVenta = () => {
   const { cart, total, removeCart } = useContext(CartContext);
   const { register, handleSubmit } = useForm();
   const { createOrder } = useOrder();
   const navigate = useNavigate();
+  const { updateProduct } = useProduct();
 
   //generar id aleatorio
 
@@ -26,6 +28,16 @@ export const FormularioDeVenta = () => {
       total,
       orden,
     });
+
+    // actualizar el stock de los productos
+
+    cart.forEach((item) => {
+      updateProduct(item._id, {
+        stock: item.stock - item.quantity,
+      });
+
+      console.log("Se actualizo el stock");
+    })
     console.log("Orden creada exitosamente");
     removeCart();
     navigate(`/pedidoexitoso/${orden}`);
