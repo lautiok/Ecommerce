@@ -1,20 +1,16 @@
 import React from "react";
-import {FormularioDeVentaForm} from "../components/FormulariodeVentaForm";
-import {CartList} from "../components/CartListVe";
+import {FormulariodeVentaForm} from "../components/FormulariodeVentaForm";
+import {CartListVe} from "../components/CartListVe";
 
-export const FormulariodeVenta = ({cart, total, removeCart, navigate, orden}) => {
+export const FormularioDeVenta = () => {
   return (
     <main className="formulariodeVenta">
       <div className="form-container">
-        <FormularioDeVentaForm
-          cart={cart}
-          total={total}
-          removeCart={removeCart}
-          navigate={navigate}
-          orden={orden}
+        <FormulariodeVentaForm
+
         />
       </div>
-      <CartList cart={cart} total={total} />
+      <CartListVe/>
     </main>
   );
 };

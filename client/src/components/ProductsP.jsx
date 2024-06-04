@@ -12,7 +12,7 @@ export const ProductsP = () => {
 
     useEffect(() => {
         getProducts();
-    }, [getProducts]);
+    }, []);
 
     if (!filteredProducts) {
         return <div className='loading'>No hay productos disponibles</div>;

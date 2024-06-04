@@ -49,8 +49,7 @@ export const createOrder = async (req, res) => {
       ciudad,
       provincia,
       phone,
-      contraentrega,
-      transferencia,
+      mpago,
       pedido,
       total,
       estado,
@@ -74,8 +73,7 @@ export const createOrder = async (req, res) => {
       ciudad,
       provincia,
       phone,
-      contraentrega,
-      transferencia,
+      mpago,
       pedido: pedidoItems, // Usas el array de objetos de pedido construido arriba
       total,
       estado,
@@ -174,10 +172,10 @@ export const createOrder = async (req, res) => {
 
 export const updateOrder = async (req, res) => {
    try {
-      const { name, apellido, email, direccion, casa, codigopostal, ciudad, provincia, phone, contraentrega, transferencia, pedido, total, estado } = req.body;
+      const { name, apellido, email, direccion, casa, codigopostal, ciudad, provincia, phone, mpago, pedido, total, estado } = req.body;
       const orderUpdated = await Order.findByIdAndUpdate(
         { _id: req.params.id },
-        { name, apellido, email, direccion, casa, codigopostal, ciudad, provincia, phone, contraentrega, transferencia, pedido, total, estado },
+        { name, apellido, email, direccion, casa, codigopostal, ciudad, provincia, phone, mpago, pedido, total, estado },
         { new: true }
       )
       res.json(orderUpdated)

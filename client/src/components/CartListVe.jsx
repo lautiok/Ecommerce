@@ -1,9 +1,11 @@
 import React from "react";
+import { useCart } from "../hooks/useCart";
 
-export const CartListVe = ({ cart, total }) => {
+export const CartListVe = () => {
+  const { cart, total } = useCart();
   return (
     <div className="cart-list-container">
-      {cart.map((item) => (
+      { cart && cart.map((item) => (
         <div className="cart-item-container" key={item.id}>
           <img src={item.img} alt={item.name} />
           <h3>{item.name}</h3>

@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 
-export const Cardproducts = ({ products }) => {
+export const Cardproducts = ({ products, isloading }) => {
     
     return (
         <div className='products'>
-    {products && products.map((product) => {
+    { isloading ? <div className='loading'>Cargando...</div> : products && products.map((product) => {
         return (
             <div className='product-card' key={product.id}>
                 <img src={product.img} alt={product.name} />

@@ -61,11 +61,9 @@ const orderSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    contraentrega: {
+    mpago: {
         type: String,
-    },
-    transferencia: {
-        type: String,
+        required: true
     },
     pedido: [orderItemSchema], 
     total: {
