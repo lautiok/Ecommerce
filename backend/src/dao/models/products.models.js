@@ -18,8 +18,8 @@ const productSchema = new mongoose.Schema({
         required: true
     },
     img:{
-        type: String,
-        required: true
+        url : String,
+        public_id : String
     },
     stock:{
         type: Number,

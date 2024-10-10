@@ -12,7 +12,8 @@ export const FormProduct = () => {
 
   const onSubmit = handleSubmit((data) => {
     createProduct(data);
-    navigate("/dashboard");
+
+    console.log(data);
   })
 
   
@@ -49,12 +50,7 @@ export const FormProduct = () => {
             placeholder="stock"
             {...register("stock", { required: true })}
           />
-          <input
-            type="text"
-            placeholder="imagen"
-            {...register("img", { required: true })}
-          />
-
+         
           <input
             type="text"
             placeholder="categoria"
@@ -66,6 +62,8 @@ export const FormProduct = () => {
             placeholder="genero"
             {...register("gender", { required: true })}
           />
+          <label htmlFor="img"> Imagen</label>
+          <input type="file" placeholder="imagen" {...register("image", { required: true })}/>
           <button>Save Product</button>
         </form>
       </div>

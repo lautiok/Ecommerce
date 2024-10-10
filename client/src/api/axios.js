@@ -1,11 +1,10 @@
-import axios from 'axios'
+import axios from "axios";
 
-const url = 'http://localhost:3000/api'
+const url = "http://localhost:3001/api";
 
 const instance = axios.create({
-    baseURL: url, 
-    withCredentials: true,
-})
+  baseURL: url,
+  withCredentials: true,
+});
 
-export default instance
-
+export default instance;
